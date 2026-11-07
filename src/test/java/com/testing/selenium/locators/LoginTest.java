@@ -9,14 +9,30 @@ public class LoginTest {
 		Thread t = new Thread();
 		t.sleep(2000);
 		web.get("https:www.saucedemo.com");
+//		
+//		web.findElement(By.id("user-name"))
+//		.sendKeys("standard_user");
+//		
+//		t.sleep(2000);
+//		web.findElement(By.id("password"))
+//		.sendKeys("secret_sauce");
+//		
+//		Thread.sleep(2000);
+//		web.findElement(By.id("login-button"))
+//		.click();
+//		
+//		t.sleep(5000);
+//		System.out.println("Url: "+web.getCurrentUrl());
+//		System.out.println("title: "+web.getTitle());
 		
-		web.findElement(By.id("user-name"))
+		
+		web.findElement(By.cssSelector("#user-name"))
 		.sendKeys("standard_user");
+		t.sleep(3000);
 		
-		t.sleep(2000);
-		web.findElement(By.id("password"))
+		web.findElement(By.cssSelector("input[type='password']"))
 		.sendKeys("secret_sauce");
-		
+		t.sleep(3000);
 		Thread.sleep(2000);
 		web.findElement(By.id("login-button"))
 		.click();
@@ -24,7 +40,9 @@ public class LoginTest {
 		t.sleep(5000);
 		System.out.println("Url: "+web.getCurrentUrl());
 		System.out.println("title: "+web.getTitle());
+		
 		web.quit();
+		
 	}
 
 }
