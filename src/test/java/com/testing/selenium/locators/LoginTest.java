@@ -26,21 +26,32 @@ public class LoginTest {
 //		System.out.println("title: "+web.getTitle());
 		
 		
-		web.findElement(By.cssSelector("#user-name"))
-		.sendKeys("standard_user");
-		t.sleep(3000);
+//		web.findElement(By.cssSelector("#user-name"))
+//		.sendKeys("standard_user");
+//		t.sleep(3000);
+//		
+//		web.findElement(By.cssSelector("input[type='password']"))
+//		.sendKeys("secret_sauce");
+//		t.sleep(3000);
+//		Thread.sleep(2000);
+//		web.findElement(By.id("login-button"))
+//		.click();
+//		
+//		t.sleep(5000);
+//		System.out.println("Url: "+web.getCurrentUrl());
+//		System.out.println("title: "+web.getTitle());
+//		
 		
-		web.findElement(By.cssSelector("input[type='password']"))
-		.sendKeys("secret_sauce");
-		t.sleep(3000);
-		Thread.sleep(2000);
-		web.findElement(By.id("login-button"))
-		.click();
+		
+		//Using Xpath
+		
+		web.findElement(By.xpath("//*[@id=\"user-name\"]")).sendKeys("standard_user");
+		web.findElement(By.xpath("//*[@id=\"password\"]")).sendKeys("secret_sauce");
+		web.findElement(By.xpath("//*[@id=\"login-button\"]")).click();
 		
 		t.sleep(5000);
 		System.out.println("Url: "+web.getCurrentUrl());
 		System.out.println("title: "+web.getTitle());
-		
 		web.quit();
 		
 	}
