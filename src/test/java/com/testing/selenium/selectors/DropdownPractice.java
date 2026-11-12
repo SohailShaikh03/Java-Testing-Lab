@@ -1,5 +1,7 @@
 package com.testing.selenium.selectors;
 
+import java.util.List;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -35,7 +37,8 @@ public static void main(String[] args) {
 		System.out.println("Selected item is: "+sel.getFirstSelectedOption().getText());
 	
 		//get all options
-		System.out.println("All options are: "+sel.getOptions().toString());
+		List<WebElement> list = sel.getOptions();
+		System.out.println("All options are: "+ list.size());
 	
 	} catch (Exception e) {
 		
